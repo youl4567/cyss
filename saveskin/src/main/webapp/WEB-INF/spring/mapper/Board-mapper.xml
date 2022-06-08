@@ -6,44 +6,47 @@
 
 <mapper namespace="com.callor.app.persistance.BoardDao">
 
-	<select id="selectAll" resultType="UserVO">
-		SELECT * FROM tbl_user
+
+	<select id="selectAll" resultType="BoardListVO">
+		SELECT * FROM tbl_
+	</select>	
+
+	<select id="selectAll" resultType="BoardVO">
+		SELECT * FROM tbl_board
 	</select>
 
-	<select id="findById" resultType="UserVO">
-		SELECT * FROM tbl_user WHERE
+	<!-- <select id="findById" resultType="BoardVO">
+		SELECT * FROM tbl_board WHERE
 		userid = #{userid}
-	</select>
+	</select> -->
 
-	<insert id="insert" parameterType="UserVO">
-		INSERT INTO tbl_user
+	<insert id="insert" parameterType="BoardVO">
+		INSERT INTO tbl_board
 		(
-			username,
-			userid,
-			password,
-			email,
-			role
+			b_num,
+			b_title,
+			b_hit,
+			b_content
 		)VALUES(
-			#{username},
-			#{userid},
-			#{password},
-			#{email},
-			#{role}
+		    #{b_num},
+			#{b_title},
+			#{b_hit},
+			#{b_content}
 		)
 	</insert>
 
-	<update id="update" parameterType="UserVO">
-		UPDATE tbl_user SET
-			userid = #{userid}
-			password = #{password},
-			email = #{email},
-			role =#{role}
+	<update id="update" parameterType="BoardVO">
+		UPDATE tbl_board SET
+			b_num = #{b_num},
+			b_title = #{b_title},
+			b_hit = #{b_hit},
+			b_content = #{b_content}
 
-		WHERE username = #{username}
+		WHERE b_num = #{b_num}
 	</update>
 	
 	<delete id="delete">
- 		DELETE FROM tbl_user WHERE username = #{username}
+ 		DELETE FROM tbl_board WHERE b_num = #{b_num}
  	</delete>
 
 </mapper>

@@ -32,7 +32,7 @@ public class UserServiceImplV1 implements UserService{
 	@Override
 	public UserVO findByName(String username) {
 		// TODO Auto-generated method stub
-		return userDao.findById(username);
+		return userDao.findByName(username);
 	}
 
 	@Override

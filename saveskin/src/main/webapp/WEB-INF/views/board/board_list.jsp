@@ -14,6 +14,7 @@
               <ul>
                 <li>
                   <h2>커뮤니티 자유게시판</h2>
+
               </li>
             </ul>
           </div>
@@ -29,82 +30,38 @@
             <col width="15%" />
             <col width="15%" />
           </colgroup>
+          <thead>
           <tr>
-            <th>번호</th>
+            <th>NO.</th>
             <th>제목</th>
             <th>작성자</th>
             <th>작성일</th>
             <th>조회수</th>
           </tr>
-          <tr>
-            <td>1</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-            <td>관리자</td>
-            <td>2022.05.10</td>
-            <td>1</td>
-          </tr>
-          <td>10</td>
-          <td><a href="${rootPath}/board/board_detail">커뮤니티 자유게시판</a></td>
-          <td>관리자</td>
-          <td>2022.05.10</td>
-          <td>1</td>
-        </tr>
+          </thead>
+	
+	<table class="w3-table-all books">
+		<tbody>
+		<!--
+		서버로 부터 받은 데이터(도서리스트)를 보여주기 위한 부분
+		BOOKS : 서버로부터 받을 데이터
+		BOOK : forEach 를 사용하여 한개의 요소를 추출하여 저장할 변수
+		 -->
+		 <c:forEach items="${bCon}" var="Con" varStatus="INDEX">
+		 <tr data-b_num="${bCon.b_num}">
+		 	<td>${Con.b_num}</td>
+		 	<td>${Con.title}</td>
+		 	<td>${Con.}</td>
+		 	<td>${Con.}</td>
+		 	<td>${Con.b_hit}</td>
+		 </tr>
+		 </c:forEach>
+		</tbody>
+	</table>
+	<div class="btn_box">
+		<a href="${rootPath}/books/insert">도서정보추가</a>
+	</div>
+	<a href="${rootPath}/books/insert">도서정보추가</a>
 
       </table>
       <div id="page">

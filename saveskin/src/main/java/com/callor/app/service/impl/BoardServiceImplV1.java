@@ -5,14 +5,27 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.callor.app.model.BoardVO;
+import com.callor.app.persistance.BoardDao;
 import com.callor.app.service.BoardService;
 
 @Service("boardServiceV1")
 public class BoardServiceImplV1 implements BoardService {
+	
+	private final BoardDao boardDao;
+	
+	public BoardServiceImplV1(BoardDao boardDao) {
+		this.boardDao = boardDao;
+	}
+	
+	@Override
+	public List<BoardVO> selectAll() {
+		List<BoardVO> boardList = boardDao.selectAll();
+		return boardList;
+	}
 
 	@Override
 	public List<BoardVO> findByNumber(String number) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -28,11 +41,6 @@ public class BoardServiceImplV1 implements BoardService {
 		return null;
 	}
 
-	@Override
-	public List<BoardVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public BoardVO findById(String id) {
