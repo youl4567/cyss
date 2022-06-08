@@ -1,12 +1,37 @@
 -- save skin
 
 -- 게시판 테이블
+drop table tbl_board;
+
 create table tbl_board (
-    b_num         NUMBER            primary key,
-    b_title       nvarchar2(25)     not null,
-    b_hit         NUMBER            not null,
-    b_content     nvarchar2(1000)   not null
+    b_num         NUMBER            not null,    -- 게시물 고유번호
+    b_title       nvarchar2(50)     not null,       -- 제목
+    b_content     nvarchar2(1000)   not null,       -- 내용
+    b_hit         NUMBER            ,               -- 조회수
+    b_writer      nvarchar2(25)     not null,       -- 작성자
+    b_date        varchar2(8)       ,               -- 작성일
+CONSTRAINT b_pk  PRIMARY KEY (b_num)
 );
+
+CREATE SEQUENCE b_seq START WITH 1 
+INCREMENT BY 1 MAXVALUE 99999 NOCYCLE NOCACHE;
+
+INSERT INTO tbl_board(b_num, b_title, b_content, b_writer)
+VALUES(b_seq.NEXTVAL, '1234', '1234', '1234');
+
+INSERT INTO tbl_board(b_num, b_title, b_content, b_writer)
+    values(b_seq.NEXTVAL,'제모옥 1', '내요옹', '작성자');
+    
+INSERT INTO tbl_board(b_num, b_title, b_content, b_writer)
+    values(b_seq.NEXTVAL,'제모옥 2', '내요옹', '작성자');
+
+INSERT INTO tbl_board(b_num, b_title, b_content, b_writer)
+    values(b_seq.NEXTVAL,'제모옥 3', '내요옹', '작성자');
+
+INSERT INTO tbl_board(b_num, b_title, b_content, b_writer)
+    values(b_seq.NEXTVAL,'제모옥 4', '내요옹', '작성자');
+select * from  tbl_board;
+
 
 -- 게시글 작성 테이블
 CREATE TABLE   tbl_write (

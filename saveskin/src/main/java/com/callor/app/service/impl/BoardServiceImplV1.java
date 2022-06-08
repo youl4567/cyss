@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.callor.app.model.BoardListVO;
 import com.callor.app.model.BoardVO;
 import com.callor.app.persistance.BoardDao;
 import com.callor.app.service.BoardService;
@@ -70,6 +71,12 @@ public class BoardServiceImplV1 implements BoardService {
 	public int delete(BoardVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<BoardListVO> findByJoin(String content) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

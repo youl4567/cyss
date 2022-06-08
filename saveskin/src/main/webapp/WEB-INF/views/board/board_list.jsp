@@ -40,7 +40,7 @@
           </tr>
           </thead>
 	
-	<table class="w3-table-all books">
+	<table class="">
 		<tbody>
 		<!--
 		서버로 부터 받은 데이터(도서리스트)를 보여주기 위한 부분
@@ -48,12 +48,13 @@
 		BOOK : forEach 를 사용하여 한개의 요소를 추출하여 저장할 변수
 		 -->
 		 <c:forEach items="${bCon}" var="Con" varStatus="INDEX">
-		 <tr data-b_num="${bCon.b_num}">
+		 <tr data-b_num="${Con.b_num}">
 		 	<td>${Con.b_num}</td>
-		 	<td>${Con.title}</td>
-		 	<td>${Con.}</td>
-		 	<td>${Con.}</td>
+		 	<td>${Con.b_title}</td>
+		 	<td>${Con.b_content}</td>
 		 	<td>${Con.b_hit}</td>
+		 	<td>${Con.b_writer}</td>
+		 	<td>${Con.b_date}</td>
 		 </tr>
 		 </c:forEach>
 		</tbody>

@@ -11,7 +11,6 @@ public interface BoardDao extends GenericDao<BoardVO, String> {
 	public List<BoardVO> findByTitle(String title);
 	public List<BoardVO> findByContent(String content);
 	
-	public List<BoardListVO> findByJoin(String content);
 	
 	
 }
