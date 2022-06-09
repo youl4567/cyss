@@ -10,15 +10,20 @@
 <%@ include file="/WEB-INF/views/include/include_nav.jsp" %>
 
     <section>
+    <form method="POST" class="">
       <div id="title">
-        <input type="text" placeholder="제목을 입력해주세요" />
+      	<c:if test="${not empty board.b_num }">
+			readonly="readonly"
+		</c:if>
+       <input name="b_title" type="text" placeholder="제목을 입력해주세요"  value="${board.b_title}"/>
       </div>
       <div id="content">
-        <input type="text" placeholder="내용을 입력해주세요" />
+        <input name="b_content" type="text" placeholder="내용을 입력해주세요" value="${board.b_content}"/>
       </div>
       <div id="btn">
-        <button type="button">게시글 등록</button>
+        <button type="submit">게시글 등록</button>
       </div>
+    </form>
     </section>
 
 

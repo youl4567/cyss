@@ -47,22 +47,18 @@
 		BOOKS : 서버로부터 받을 데이터
 		BOOK : forEach 를 사용하여 한개의 요소를 추출하여 저장할 변수
 		 -->
-		 <c:forEach items="${bCon}" var="Con" varStatus="INDEX">
+		 <c:forEach items="${board}" var="Con">
 		 <tr data-b_num="${Con.b_num}">
 		 	<td>${Con.b_num}</td>
 		 	<td>${Con.b_title}</td>
-		 	<td>${Con.b_content}</td>
-		 	<td>${Con.b_hit}</td>
 		 	<td>${Con.b_writer}</td>
 		 	<td>${Con.b_date}</td>
+		 	<td>${Con.b_hit}</td>
 		 </tr>
 		 </c:forEach>
 		</tbody>
 	</table>
-	<div class="btn_box">
-		<a href="${rootPath}/books/insert">도서정보추가</a>
-	</div>
-	<a href="${rootPath}/books/insert">도서정보추가</a>
+
 
       </table>
       <div id="page">

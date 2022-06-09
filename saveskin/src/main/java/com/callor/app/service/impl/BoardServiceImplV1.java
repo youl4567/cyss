@@ -57,7 +57,7 @@ public class BoardServiceImplV1 implements BoardService {
 
 	@Override
 	public int insert(BoardVO vo) {
-		// TODO Auto-generated method stub
+		boardDao.insert(vo);
 		return 0;
 	}
 
@@ -73,10 +73,5 @@ public class BoardServiceImplV1 implements BoardService {
 		return 0;
 	}
 
-	@Override
-	public List<BoardListVO> findByJoin(String content) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

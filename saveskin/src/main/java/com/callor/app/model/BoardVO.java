@@ -23,4 +23,5 @@ public class BoardVO {
 	public int b_hit;			// 조회수
 	public String b_writer;		// 작성자   
 	public Date b_date;			// 작성일
+	
 }

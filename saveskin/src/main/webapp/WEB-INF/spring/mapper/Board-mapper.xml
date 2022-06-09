@@ -7,13 +7,10 @@
 <mapper namespace="com.callor.app.persistance.BoardDao">
 
 
-	<select id="selectAll" resultType="BoardListVO">
-		SELECT * FROM tbl_
+	<select id="selectAll" resultType="BoardVO">
+		SELECT * FROM tbl_Board
 	</select>	
 
-	<select id="selectAll" resultType="BoardVO">
-		SELECT * FROM tbl_board
-	</select>
 
 	<!-- <select id="findById" resultType="BoardVO">
 		SELECT * FROM tbl_board WHERE
@@ -26,21 +23,27 @@
 			b_num,
 			b_title,
 			b_hit,
-			b_content
+			b_content,
+			b_writer,
+			b_date
 		)VALUES(
-		    #{b_num},
+		    b_num.NEXTVAL,
 			#{b_title},
 			#{b_hit},
-			#{b_content}
+			#{b_content},
+			#{b_writer},
+			#{b_date}
 		)
 	</insert>
 
 	<update id="update" parameterType="BoardVO">
 		UPDATE tbl_board SET
-			b_num = #{b_num},
-			b_title = #{b_title},
-			b_hit = #{b_hit},
-			b_content = #{b_content}
+			b_num 	  = #{b_num},
+			b_title   = #{b_title},
+			b_hit	  =	#{b_hit},
+			b_content = #{b_content},
+			b_writer  =	#{b_writer},
+			b_date	  =	#{b_date}
 
 		WHERE b_num = #{b_num}
 	</update>

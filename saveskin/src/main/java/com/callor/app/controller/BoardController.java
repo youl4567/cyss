@@ -41,23 +41,34 @@ public class BoardController {
 		
 		List<BoardVO> boardList = boardService.selectAll();
 		
-		model.addAttribute("bCon", boardList);
+		model.addAttribute("board", boardList);
 		
 		return "/board/board_list";
 	}
+	
+	//TODO 자유게시판 글 쓰기
+	@RequestMapping(value="/board_write", method=RequestMethod.GET)
+	public String board_write( ) {
+		
+		
+		
+		return "/board/board_write";
+	}
+	
+	@RequestMapping(value="/board_write", method=RequestMethod.POST)
+	public String board_write(BoardVO boardvo) {
+		log.debug("확인ㅇㅇ"+ boardvo.toString());
+		boardService.insert(boardvo);
+		
+		
+		return "redirect:/board/board_list";
+	}
+		
 	
 	//TODO 자유게시판 상세페이지
 	@RequestMapping(value="/board_detail", method=RequestMethod.GET)
 	public String board_detail() {
 		return "/board/board_detail";
 	}
-	
-	//TODO 자유게시판 글 쓰기
-	@RequestMapping(value="/board_write", method=RequestMethod.GET)
-	public String board_write() {
-		return "/board/board_write";
-	}
-	
-	
 
 }
