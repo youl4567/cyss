@@ -7,7 +7,7 @@ import com.callor.app.model.BoardVO;
 
 public interface BoardDao extends GenericDao<BoardVO, String> {
 
-	public List<BoardVO> findByNumber(String number);
+	public BoardVO findByNumber(String number);
 	public List<BoardVO> findByTitle(String title);
 	public List<BoardVO> findByContent(String content);
 	

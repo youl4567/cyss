@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -66,9 +67,12 @@ public class BoardController {
 		
 	
 	//TODO 자유게시판 상세페이지
-	@RequestMapping(value="/board_detail", method=RequestMethod.GET)
-	public String board_detail() {
-		return "/board/board_detail";
+	@RequestMapping(value="{b_num}/board_detail", method=RequestMethod.GET)
+	public String board_detail(@PathVariable("b_num") String b_num, Model model) {
+		
+		BoardVO boardVO = boardService.findByNumber(b_num);
+		model.addAttribute("BOARD", boardVO);
+		return "board/board_detail";
 	}
 
 }

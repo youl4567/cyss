@@ -5,6 +5,10 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_head.jsp" %>
 <link rel="stylesheet" href="${rootPath}/static/css/board_list.css?ver=2022-05-28-001">
+<script>
+	const rootPath = "${rootPath}"
+</script>
+<script src="${rootPath}/static/js/board.js?ver=2022-06-10-002"></script>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/include_nav.jsp" %>
@@ -22,7 +26,8 @@
             <p>화장품에 대한 정보를 자유롭게!</p>
           </div>
         </div>
-        <table id="boardtable">
+        
+        <table id="boardtable" class="board">
           <colgroup>
             <col width="15%" />
             <col width="40%" />
@@ -30,7 +35,6 @@
             <col width="15%" />
             <col width="15%" />
           </colgroup>
-          <thead>
           <tr>
             <th>NO.</th>
             <th>제목</th>
@@ -38,10 +42,7 @@
             <th>작성일</th>
             <th>조회수</th>
           </tr>
-          </thead>
-	
-	<table class="">
-		<tbody>
+
 		<!--
 		서버로 부터 받은 데이터(도서리스트)를 보여주기 위한 부분
 		BOOKS : 서버로부터 받을 데이터
@@ -56,11 +57,8 @@
 		 	<td>${Con.b_hit}</td>
 		 </tr>
 		 </c:forEach>
-		</tbody>
-	</table>
-
-
       </table>
+      
       <div id="page">
         <ul>
           <a href="#"><li><<</li></a>

@@ -25,9 +25,9 @@ public class BoardServiceImplV1 implements BoardService {
 	}
 
 	@Override
-	public List<BoardVO> findByNumber(String number) {
+	public BoardVO findByNumber(String b_num) {
 		
-		return null;
+		return boardDao.findByNumber(b_num);
 	}
 
 	@Override
