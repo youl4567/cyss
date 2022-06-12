@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,23 +13,25 @@
  <section id="board-in">
  
       <div id="title1">
+      
             <div id="nick">
               <img src="${rootPath}/static/image/01.png" />
               <p>닉네임</p>
             </div>
-    <!-- 제목 title  -->
-    <h3>${board.b_title}</h3>
-      </div>
-
-	<!-- 내용 content -->
-      <div id="content">
-            <p>
-
-  				  ${board.b_content}
-		
-            </p>
-      </div>
-
+            
+			    <!-- 제목 title  -->
+			    
+				    <h3>${BOARD.b_title}</h3>
+	  </div>
+				
+				<!-- 내용 content -->
+				<div id="content">
+				     <p>
+				  				  ${BOARD.b_content}
+				     </p>
+				</div>
+       
+      
 
 
 	<!-- 댓글 부분 -->

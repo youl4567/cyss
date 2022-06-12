@@ -5,7 +5,7 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <link rel="stylesheet"
-	href="${rootPath}/static/css/board_write.css?ver=2022-06-10-004">
+	href="${rootPath}/static/css/board_write.css?ver=2022-06-113-001">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_nav.jsp"%>
