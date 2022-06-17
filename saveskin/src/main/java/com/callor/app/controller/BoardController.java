@@ -36,7 +36,7 @@ public class BoardController {
 		return "redirect:/board/board_list";
 	}
 	
-	//TODO 자유게시판 리스트
+//TODO 자유게시판 리스트
 	@RequestMapping(value="/board_list", method=RequestMethod.GET)
 	public String board_list(Model model) {
 		
@@ -47,7 +47,7 @@ public class BoardController {
 		return "/board/board_list";
 	}
 	
-	//TODO 자유게시판 글 쓰기
+//TODO 자유게시판 글 쓰기
 	@RequestMapping(value="/board_write", method=RequestMethod.GET)
 	public String board_write( ) {
 		
